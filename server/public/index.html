@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bears News</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="vendors/bootstrap.css">
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bears.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="blog-header py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="text-muted" href="#">Subscribe</a>
+                </div>
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-dark" href="#">Bears</a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="text-muted" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3">
+                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                            <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+        <div>
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 text-muted" href="blackhawks.html">Blackhawks</a>
+                    <a class="p-2 text-muted" href="white-sox.html">White Sox</a>
+                    <a class="p-2 text-muted" href="bulls.html">Bulls</a>
+                </nav>
+            </div>
+            <div class="grid table table-hover main-layout">
+                <table id="standings-table">
+                    <thead>
+                        <tr>
+                            <th>Team</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>T</th>
+                            <th>Pct.</th>
+                            <th>PF</th>
+                            <th>PA</th>
+                            <th>Home</th>
+                            <th>Away</th>
+                            <th>Streak</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings"></tbody>
+                </table>
+
+            </div>
+            <div class="table">
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Date</th>
+                            <th>Opponent</th>
+                            <th>W/L</th>
+                            <th>Result</th>
+                            <th>Record</th>
+                        </tr>
+                    </thead>
+                    <tbody <tr class="standings-table-row">
+                        <tr>
+                            <td>1</td>
+                            <td>09/09</td>
+                            <td>at GreenBay</td>
+                            <td>L</td>
+                            <td>23-24</td>
+                            <td>0-1</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>9/17</td>
+                            <td>Seattle</td>
+                            <td>W</td>
+                            <td>24-17</td>
+                            <td>1-1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>9/23</td>
+                            <td>@ Arizona</td>
+                            <td>W</td>
+                            <td>16-14</td>
+                            <td>2-1</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>9/30</td>
+                            <td>Tampa Bay</td>
+                            <td>W</td>
+                            <td>48-10</td>
+                            <td>3-1</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td></td>
+                            <td>BYE WEEK</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>10/14</td>
+                            <td>@ Miami</td>
+                            <td>L</td>
+                            <td>31-28 OT</td>
+                            <td>3-2</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>10/21</td>
+                            <td>New England</td>
+                            <td>L</td>
+                            <td>38-31</td>
+                            <td>3-3</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>10/28</td>
+                            <td>Jets</td>
+                            <td>W</td>
+                            <td>24-10</td>
+                            <td>4-3</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>11/4</td>
+                            <td>@ Buffalo</td>
+                            <td>W</td>
+                            <td>41-9</td>
+                            <td>5-3</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>11/11</td>
+                            <td>Detroit</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>11/18</td>
+                            <td>Minnesota</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>11/22 Thanksgiving</td>
+                            <td>@ Detroit</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>12/2</td>
+                            <td>@ New York Giants</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>12/9</td>
+                            <td>Los Angeles Rams</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>12/16</td>
+                            <td>Green Bay</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>12/23</td>
+                            <td>@ San Franscisco</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>12/30</td>
+                            <td>@ Minnesota</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="article-wrapper">
+                <h2 class="articles-title">Bears News Feed</h2>
+                <div class="articles" id="articles">
+
+                    <a href="#" id="article-link" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script src="js/client.js"></script>
+
+</html>

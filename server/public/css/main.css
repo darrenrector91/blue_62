@@ -1,0 +1,14 @@
+title,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-layout {
+    width: 1000px;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+}

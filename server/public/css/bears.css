@@ -1,0 +1,19 @@
+.article-wrapper {
+    border: 2px solid whitesmoke;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    background-color: rgba(236, 236, 236, 0.479)
+}
+
+a {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.articles-title {
+    text-align: center;
+}
