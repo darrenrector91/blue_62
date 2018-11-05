@@ -2,7 +2,8 @@ $(document).ready(function () {
     // console.log('Client loaded!');
 
     getStandings()
-    getJson()
+    // getJson()
+    api()
 
     function getStandings() {
         nflApi = '37eew9vyws8rp5etrfqbtnp2';
@@ -25,9 +26,9 @@ $(document).ready(function () {
 
     function displayStandings(data) {
         let teamData = data.conferences[1].divisions[1];
-        console.log(teamData);
+        // console.log(teamData);
         var teams = teamData.teams;
-        console.log(teams);
+        // console.log(teams);
 
         $('#standings').empty();
 
@@ -50,11 +51,27 @@ $(document).ready(function () {
         }
     }
 
-    function displayArticles(data) {
+
+
+    function api() {
+        // ajax call to server to get jobs
+        $.ajax({
+            url: 'http://api.blue62.darrenrector.com/articles.json',
+            type: 'GET',
+            success: function (data) {
+                console.log('Data from API', data);
+                displayAPIArticles(data);
+            },
+            error: function (response) {
+                console.log('error response', response);
+
+            }
+        })
+    } // end api
+
+    function displayAPIArticles(data) {
         let articles = data;
         console.log(articles);
-        console.log(articles.length);
-
 
         $('#articles').empty();
 
@@ -62,29 +79,9 @@ $(document).ready(function () {
             //appending rows to DOM
             $('.articles').append('<h5>' + articles[i].article + '</h5>');
             $('.articles').append('<a href="' + articles[i].link + '"target="_blank">' + articles[i].link + '</a>');
-
-
-
         }
     }
 
-
-    function getJson() {
-
-        // ajax call to server to get jobs
-        $.ajax({
-            url: 'http://localhost:3000/news',
-            type: 'GET',
-            success: function (data) {
-                // console.log(data);
-                displayArticles(data);
-            },
-            error: function (response) {
-                console.log('error response', response);
-
-            }
-        })
-    } // end getStandings
 
 
 })
