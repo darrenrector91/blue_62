@@ -59,7 +59,7 @@ $(document).ready(function () {
             url: 'http://api.blue62.darrenrector.com/articles.json',
             type: 'GET',
             success: function (data) {
-                console.log('Data from API', data);
+                // console.log('Data from API', data);
                 displayAPIArticles(data);
             },
             error: function (response) {
@@ -71,7 +71,7 @@ $(document).ready(function () {
 
     function displayAPIArticles(data) {
         let articles = data;
-        console.log(articles);
+        // console.log(articles);
 
         $('#articles').empty();
 
