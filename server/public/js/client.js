@@ -1,14 +1,11 @@
 $(document).ready(function () {
-    // console.log('Client loaded!');
-
     getStandings()
-    // getJson()
     api()
 
     function getStandings() {
         nflApi = '37eew9vyws8rp5etrfqbtnp2';
-
         // ajax call to server to get jobs
+
         $.ajax({
             url: 'http://api.sportradar.us/nfl/official/trial/v5/en/seasons/2018/standings.json?api_key=' + nflApi,
             type: 'GET',
@@ -51,12 +48,10 @@ $(document).ready(function () {
         }
     }
 
-
-
     function api() {
         // ajax call to server to get jobs
         $.ajax({
-            url: 'http://api.blue62.darrenrector.com/articles.json',
+            url: 'https://api.blue62.darrenrector.com/articles.json',
             type: 'GET',
             success: function (data) {
                 // console.log('Data from API', data);
@@ -69,6 +64,7 @@ $(document).ready(function () {
         })
     } // end api
 
+
     function displayAPIArticles(data) {
         let articles = data;
         // console.log(articles);
@@ -77,8 +73,8 @@ $(document).ready(function () {
 
         for (let i = 0; i < articles.length; i++) {
             //appending rows to DOM
-            $('.articles').append('<h5>' + articles[i].article + '</h5>');
-            $('.articles').append('<a href="' + articles[i].link + '"target="_blank">' + articles[i].link + '</a>');
+            // $('.articles').append('<h5>' + articles[i].article + '</h5>');
+            $('.articles').append('<ul><li>' + ('<a href="' + articles[i].link + '"target="_blank">' + articles[i].article + '</a>') + '</li></ul>')
         }
     }
 
