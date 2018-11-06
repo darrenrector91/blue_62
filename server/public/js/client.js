@@ -2,6 +2,8 @@ $(document).ready(function () {
     getStandings()
     api()
 
+
+
     function getStandings() {
         nflApi = '37eew9vyws8rp5etrfqbtnp2';
         // ajax call to server to get jobs
@@ -48,10 +50,11 @@ $(document).ready(function () {
         }
     }
 
+    // 'https://api.blue62.darrenrector.com/articles.json',
     function api() {
         // ajax call to server to get jobs
         $.ajax({
-            url: 'https://api.blue62.darrenrector.com/articles.json',
+            url: 'http://localhost:5000/articles-api',
             type: 'GET',
             success: function (data) {
                 // console.log('Data from API', data);
