@@ -54,7 +54,8 @@ $(document).ready(function () {
     function api() {
         // ajax call to server to get jobs
         $.ajax({
-            url: 'http://localhost:5000/articles-api',
+            // url: 'http://localhost:5000/articles-api',
+            url: 'https://blue62.herokuapp.com/articles-api',
             type: 'GET',
             success: function (data) {
                 // console.log('Data from API', data);
