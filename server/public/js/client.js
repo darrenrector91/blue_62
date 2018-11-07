@@ -64,6 +64,8 @@ $(document).ready(function () {
         }
     }
 
+
+
     // Articles
     $.getJSON("./json/articles.json", function (data) {
         // console.log(data); 
