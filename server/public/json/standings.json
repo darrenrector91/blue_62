@@ -1,0 +1,40 @@
+{
+ "team": [
+  {
+   "name": "Chicago",
+   "url": "https://www.footballdb.com/teams/nfl/chicago-bears/results",
+   "wins": "5",
+   "losses": "3",
+   "ties": "0",
+   "points_for": "235",
+   "points_against": "153"
+  },
+  {
+   "name": "Minnesota",
+   "url": "https://www.footballdb.com/teams/nfl/minnesota-vikings/results",
+   "wins": "5",
+   "losses": "3",
+   "ties": "1",
+   "points_for": "221",
+   "points_against": "204"
+  },
+  {
+   "name": "Green Bay",
+   "url": "https://www.footballdb.com/teams/nfl/green-bay-packers/results",
+   "wins": "3",
+   "losses": "4",
+   "ties": "1",
+   "points_for": "192",
+   "points_against": "204"
+  },
+  {
+   "name": "Detroit",
+   "url": "https://www.footballdb.com/teams/nfl/detroit-lions/results",
+   "wins": "3",
+   "losses": "5",
+   "ties": "0",
+   "points_for": "180",
+   "points_against": "210"
+  }
+ ]
+}
