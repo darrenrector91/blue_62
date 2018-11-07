@@ -20,6 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+
+
 </head>
 
 <body>
@@ -38,193 +43,63 @@
             </div>
         </header>
         <div>
-            <div class="nav-scroller py-1 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 text-muted" href="blackhawks.html">Blackhawks</a>
-                    <a class="p-2 text-muted" href="white-sox.html">White Sox</a>
-                    <a class="p-2 text-muted" href="bulls.html">Bulls</a>
-                </nav>
-            </div>
-            <div class="grid table table-hover main-layout">
-                <table id="standings-table">
-                    <thead>
-                        <tr>
-                            <th>Team</th>
-                            <th>W</th>
-                            <th>L</th>
-                            <th>T</th>
-                            <th>Pct.</th>
-                            <th>PF</th>
-                            <th>PA</th>
-                            <th>Home</th>
-                            <th>Away</th>
-                            <th>Streak</th>
-                        </tr>
-                    </thead>
-                    <tbody id="standings"></tbody>
-                </table>
-
-            </div>
-            <div class="table table-hover">
-                <table id="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Week</th>
-                            <th>Date</th>
-                            <th>Opponent</th>
-                            <th>W/L</th>
-                            <th>Result</th>
-                            <th>Record</th>
-                        </tr>
-                    </thead>
-                    <tbody <tr class="standings-table-row">
-                        <tr>
-                            <td>1</td>
-                            <td>09/09</td>
-                            <td>at GreenBay</td>
-                            <td>L</td>
-                            <td>23-24</td>
-                            <td>0-1</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>9/17</td>
-                            <td>Seattle</td>
-                            <td>W</td>
-                            <td>24-17</td>
-                            <td>1-1</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>9/23</td>
-                            <td>@ Arizona</td>
-                            <td>W</td>
-                            <td>16-14</td>
-                            <td>2-1</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>9/30</td>
-                            <td>Tampa Bay</td>
-                            <td>W</td>
-                            <td>48-10</td>
-                            <td>3-1</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td></td>
-                            <td>BYE WEEK</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>10/14</td>
-                            <td>@ Miami</td>
-                            <td>L</td>
-                            <td>31-28 OT</td>
-                            <td>3-2</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>10/21</td>
-                            <td>New England</td>
-                            <td>L</td>
-                            <td>38-31</td>
-                            <td>3-3</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>10/28</td>
-                            <td>Jets</td>
-                            <td>W</td>
-                            <td>24-10</td>
-                            <td>4-3</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>11/4</td>
-                            <td>@ Buffalo</td>
-                            <td>W</td>
-                            <td>41-9</td>
-                            <td>5-3</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>11/11</td>
-                            <td>Detroit</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>11</td>
-                            <td>11/18</td>
-                            <td>Minnesota</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>12</td>
-                            <td>11/22 Thanksgiving</td>
-                            <td>@ Detroit</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>13</td>
-                            <td>12/2</td>
-                            <td>@ New York Giants</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>14</td>
-                            <td>12/9</td>
-                            <td>Los Angeles Rams</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>15</td>
-                            <td>12/16</td>
-                            <td>Green Bay</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>16</td>
-                            <td>12/23</td>
-                            <td>@ San Franscisco</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>17</td>
-                            <td>12/30</td>
-                            <td>@ Minnesota</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="article-wrapper">
-                <h2 class="articles-title">Bears News Feed</h2>
-                <div class="articles" id="articles">
-
-                    <a href="#" id="article-link" target="_blank"></a>
+            <!-- Nav banner -->
+            <section class="row">
+                <div class="nav-scroller py-1 mb-2">
+                    <nav class="nav d-flex justify-content-between">
+                        <a class="p-2 text-muted" href="blackhawks.html">Blackhawks</a>
+                        <a class="p-2 text-muted" href="white-sox.html">White Sox</a>
+                        <a class="p-2 text-muted" href="bulls.html">Bulls</a>
+                    </nav>
                 </div>
-            </div>
+                <!-- Articles -->
+                <section class="section-one">
+                    <div class="article-wrapper">
+                        <h2 class="articles-title">Bears News Feed</h2>
+                        <div class="articles" id="articles">
+                            <a href="#" id="article-link" target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="twitter-wrapper">
+                        <h4 class="twit-title"><span><i class="fab fa-twitter"></i></span>Twitter</h4>
+                    </div>
+                </section>
+                <!-- Standings -->
+                <section class="section-two">
+                    <div class="grid table table-hover main-layout standings">
+                        <table id="standings-table">
+                            <thead>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>W</th>
+                                    <th>L</th>
+                                    <th>T</th>
+                                    <th>Pct.</th>
+                                    <th>PF</th>
+                                    <th>PA</th>
+                                </tr>
+                            </thead>
+                            <tbody id="standings"></tbody>
+                        </table>
+                    </div>
+                </section>
+                <!-- Schedule -->
+                <section class="section-three">
+                    <div class="table table-hover schedule">
+                        <table id="schedule-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Opponent</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody id="schedule"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
         </div>
 </body>
 

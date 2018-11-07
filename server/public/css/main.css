@@ -12,3 +12,42 @@ h5 {
     margin-left: 0 auto;
     margin-right: 0 auto;
 }
+
+.standings {
+    float: left;
+    width: 470px;
+    height: 250px;
+    margin: 30px;
+}
+
+.schedule {
+    float: right;
+}
+
+.section-one {
+    width: 100%;
+    height: auto;
+}
+
+.article-wrapper {
+    width: 70%;
+}
+
+.twitter-wrapper {
+    width: 430px;
+    float: right;
+    border: 1px solid lightgray;
+    position: relative;
+    bottom: 349px;
+    left: 120px;
+
+}
+
+.twit-title {
+    text-align: center;
+}
+
+.fa-twitter {
+    margin-right: 30px;
+    color: #55acee
+}

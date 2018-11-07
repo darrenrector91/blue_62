@@ -1,86 +1,82 @@
 $(document).ready(function () {
-    getStandings()
-    api()
 
-
-
-    function getStandings() {
-        nflApi = '37eew9vyws8rp5etrfqbtnp2';
-        // ajax call to server to get jobs
-
-        $.ajax({
-            url: 'http://api.sportradar.us/nfl/official/trial/v5/en/seasons/2018/standings.json?api_key=' + nflApi,
-            type: 'GET',
-            success: function (data) {
-                // console.log(data);
-                displayStandings(data);
-            },
-            error: function (response) {
-                console.log('error response', response);
-
-            }
-        })
-    } // end getStandings
-
+    // Standings
+    $.getJSON("./json/standings.json", function (data) {
+        displayStandings(data)
+    });
 
     function displayStandings(data) {
-        let teamData = data.conferences[1].divisions[1];
-        // console.log(teamData);
-        var teams = teamData.teams;
-        // console.log(teams);
+        let standings = data.team
 
         $('#standings').empty();
 
-        for (let i = 0; i < teams.length; i++) {
+        for (let i = 0; i < standings.length; i++) {
+
+            a = parseFloat(standings[i].wins);
+            b = parseFloat(standings[i].losses);
+            c = parseFloat(standings[i].ties);
+
+            totGamesPlayed = a + b + c;
+            // console.log(totGamesPlayed);
+            let tiesPct = c * 0.5;
+            // console.log(tiesPct);
+            let winTotal = a + tiesPct;
+            // console.log(winTotal);
+            let winPct = (winTotal / totGamesPlayed).toFixed(3);
+            console.log(winPct);
+
             let newRow = $('<tr>');
             //appending rows to DOM
-            newRow.append('<td>' + teams[i].market + '</td>');
-            newRow.append('<td>' + teams[i].wins + '</td>');
-            newRow.append('<td>' + teams[i].losses + '</td>');
-            newRow.append('<td>' + teams[i].ties + '</td>');
-            newRow.append('<td>' + teams[i].win_pct + '</td>');
-            newRow.append('<td>' + teams[i].points_for + '</td>');
-            newRow.append('<td>' + teams[i].points_against + '</td>');
-            newRow.append('<td>' + teams[i].records[3].record.wins + '-' + teams[i].records[3].record.losses + '</td>');
-            newRow.append('<td>' + teams[i].records[5].record.wins + '-' + teams[i].records[5].record.losses + '</td>');
-            newRow.append('<td>' + teams[i].streak.desc + '</td>');
+            newRow.append('<td>' + standings[i].name + '</td>');
+            newRow.append('<td>' + standings[i].wins + '</td>');
+            newRow.append('<td>' + standings[i].losses + '</td>');
+            newRow.append('<td>' + standings[i].ties + '</td>');
+            newRow.append('<td>' + winPct + '</td>');
+            newRow.append('<td>' + standings[i].points_for + '</td>');
+            newRow.append('<td>' + standings[i].points_against + '</td>');
 
             $('#standings').append(newRow);
-
         }
     }
 
-    function api() {
-        // ajax call to server to get jobs
-        $.ajax({
-            url: 'http://localhost:5000/articles-api',
-            // url: 'https://blue62.herokuapp.com/articles-api',
-            type: 'GET',
-            success: function (data) {
-                // console.log('Data from API', data);
-                displayAPIArticles(data);
-            },
-            error: function (response) {
-                console.log('error response', response);
+    // Schedule
+    $.getJSON("./json/schedule.json", function (data) {
+        displaySchedule(data)
+    });
 
-            }
-        })
-    } // end api
+    function displaySchedule(data) {
+        let schedule = data;
+        // console.log(data);
+        let matchups = schedule.game;
+        // console.log(matchups);
 
+        $('#schedule').empty();
+
+        for (let i = 0; i < matchups.length; i++) {
+            //appending rows to DOM
+            let newRow = $('<tr>');
+            //appending rows to DOM
+            newRow.append('<td>' + matchups[i].date + '</td>');
+            newRow.append('<td>' + matchups[i].opponent + '</td>');
+            newRow.append('<td>' + matchups[i].result + '</td>');
+
+            $('#schedule').append(newRow);
+        }
+    }
+
+    // Articles
+    $.getJSON("./json/articles.json", function (data) {
+        // console.log(data); 
+        displayAPIArticles(data)
+    });
 
     function displayAPIArticles(data) {
         let articles = data;
-        // console.log(articles);
-
         $('#articles').empty();
-
         for (let i = 0; i < articles.length; i++) {
             //appending rows to DOM
             // $('.articles').append('<h5>' + articles[i].article + '</h5>');
             $('.articles').append('<ul><li>' + ('<a href="' + articles[i].link + '"target="_blank">' + articles[i].article + '</a>') + '</li></ul>')
         }
     }
-
-
-
 })
