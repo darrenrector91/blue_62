@@ -25,13 +25,24 @@ h5 {
 }
 
 .section-one {
+    display: none;
     width: 100%;
     height: auto;
+}
+
+.secton-two {
+    display: none;
 }
 
 .article-wrapper {
     width: 70%;
 }
+
+/* *************SCHEDULE TABLE************* */
+
+
+
+/* *************TWITTER************* */
 
 .twitter-wrapper {
     width: 430px;

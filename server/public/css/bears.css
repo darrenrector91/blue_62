@@ -6,27 +6,26 @@
     background-color: rgba(236, 236, 236, 0.479)
 }
 
-a {
-    color: black;
-}
-
-a:visited {
-    color: black;
-}
-
 .articles-title {
     text-align: center;
+}
+
+.section-three {
+    width: 100%;
 }
 
 ul {
     list-style: none;
 }
 
-.button {
-    display: none;
+.schedule-row .weatherButton {
+    display: block;
 }
 
-img:hover+.button,
-.button:hover {
-    display: inline-block;
+/* .schedule-row:hover .weatherButton {
+    display: block;
+} */
+
+.fa-cloud-sun {
+    margin-right: 10px;
 }
