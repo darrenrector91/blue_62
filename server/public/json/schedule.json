@@ -1,98 +1,114 @@
 {
     "game": [{
             "date": "09/09 (Sun.)",
-            "opponent": "at Green Bay",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/green-bay-packers",
+            "opponent": "Green Bay",
+            "city": "Green Bay",
+            "location": "Away",
             "result": "L 24-23"
         },
         {
             "date": "09/17 (Mon.)",
             "opponent": "Seattle",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/seattle-seahawks",
+            "city": "Seattle",
+            "location": "Home",
             "result": "W 24-17"
         },
         {
             "date": "09/23 (Sun.)",
-            "opponent": "at Arizona",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/arizona-cardinals",
+            "opponent": "Arizona",
+            "city": "Phoenix",
+            "location": "Away",
             "result": "W 16-14"
         },
         {
             "date": "09/30 (Sun.)",
             "opponent": "Tampa Bay",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/tampa-bay-buccaneers",
+            "city": "Tampa Bay",
+            "location": "Home",
             "result": "W 48-10"
         },
         {
             "date": "10/14 (Sun.)",
-            "opponent": "at Miami",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/miami-dolphins",
+            "opponent": "Miami",
+            "city": "Miami",
+            "location": "Away",
             "result": "L 31-28"
         },
         {
             "date": "10/21 (Sun.)",
             "opponent": "New England",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/new-england-patriots",
+            "city": "Foxboro",
+            "location": "Home",
             "result": "L 38-31"
         },
         {
             "date": "10/28 (Sun.)",
             "opponent": "NY Jets",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/new-york-jets",
+            "city": "East Rutherford",
+            "location": "Home",
             "result": "W 24-10"
         },
         {
             "date": "11/04 (Sun.)",
-            "opponent": "at Buffalo",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/buffalo-bills",
+            "opponent": "Buffalo",
+            "city": "Buffalo",
+            "location": "Away",
             "result": "W 41-9"
         },
         {
             "date": "11/11 (Sun.)",
             "opponent": "Detroit",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/detroit-lions",
+            "city": "Detroit",
+            "location": "Home",
             "result": "1:00 PM"
         },
         {
             "date": "11/18 (Sun.)",
             "opponent": "Minnesota",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/minnesota-vikings",
+            "city": "Minneapolis",
+            "location": "Home",
             "result": "8:20 PM"
         },
         {
             "date": "11/22 (Thu.)",
-            "opponent": "at Detroit",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/detroit-lions",
+            "opponent": "Detroit",
+            "city": "Detroit",
+            "location": "Away",
             "result": "12:30 PM"
         },
         {
             "date": "12/02 (Sun.)",
-            "opponent": "at NY Giants",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/new-york-giants",
+            "opponent": "NY Giants",
+            "city": "East Rutherford",
+            "location": "Away",
             "result": "1:00 PM"
         },
         {
             "date": "12/09 (Sun.)",
             "opponent": "LA Rams",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/los-angeles-rams",
+            "city": "Los Angeles",
+            "location": "Home",
             "result": "1:00 PM"
         },
         {
             "date": "12/16 (Sun.)",
             "opponent": "Green Bay",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/green-bay-packers",
+            "city": "Green Bay",
+            "location": "Home",
             "result": "1:00 PM"
         },
         {
             "date": "12/23 (Sun.)",
-            "opponent": "at San Francisco",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/san-francisco-49ers",
+            "opponent": "San Francisco",
+            "city": "San Franscisco",
+            "location": "Away",
             "result": "4:05 PM"
         },
         {
             "date": "12/30 (Sun.)",
-            "opponent": "at Minnesota",
-            "opponent_url": "https://www.footballdb.com/teams/nfl/minnesota-vikings",
+            "opponent": "Minnesota",
+            "city": "Minneapolis",
+            "location": "Away",
             "result": "1:00 PM"
         }
     ]

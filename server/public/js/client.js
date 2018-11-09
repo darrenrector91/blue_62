@@ -2,10 +2,6 @@ $(document).ready(function () {
 
     owAPI = '749da4002db4023d33f77723c728f9ec';
 
-    // Opponent array
-    var opponentArray = [];
-    // console.log('opponentArray', opponentArray);
-
     $('#schedule').on('click', '.weatherButton', weatherButton);
 
     // Standings
@@ -52,51 +48,77 @@ $(document).ready(function () {
         let schedule = data.game;
         // console.log(schedule);
 
-        let matchups = schedule
-
         $('#schedule').empty();
 
-        for (let i = 0; i < matchups.length; i++) {
+        for (let i = 0; i < schedule.length; i++) {
 
-            opp = matchups[i].opponent;
-            // console.log(opp);
-            date = matchups[i].date;
-            result = matchups[i].result;
-            values = [opp, date, result];
+            date = schedule[i].date;
+            opp = schedule[i].opponent;
+            loc = schedule[i].location;
+            result = schedule[i].result;
 
-            opponentArray.push(opp);
+
 
             //appending rows to DOM
             let newRow = $('<tr class="schedule-row">');
             //appending rows to DOM
             newRow.append('<td data-col="date">' + date + '</td>');
             newRow.append('<td data-col="opponent">' + opp + '</td>');
+            newRow.append('<td data-col="location">' + loc + '</td>');
             newRow.append('<td data-col="result">' + result + '</td>');
-            newRow.append('<td><button type="button" class="btn btn-primary weatherButton" value=' + date + '><i class="fas fa-cloud-sun"></i>Weather</button><a href="#"></button></td>');
+            newRow.append('<td><button type="button" class="btn btn-primary weatherButton" value=' + loc + '><i class="fas fa-cloud-sun"></i>Weather</button><a href="#"></button></td>');
 
             $('#schedule').append(newRow);
         }
     }
 
-
     //  Script allows for selectable column data when button clicked SEE: html table 'data-col='
-    $('body').on('click', '.weatherButton', function (e) {
-        var col, txt;
-        col = $('#schedule-table').data('col');
-        console.log(col);
 
-        txt = $(this).parent().siblings("td[data-col=" + col + "]").text();
-        e.preventDefault();
+    function weatherButton(value) {
+        let location = $(this).val();
+        console.log(location);
 
-        var visitor = txt;
-        visitor = visitor.replace("at ", "")
-        console.log('visitor: ', visitor);
+        if (location === 'Away') {
+            // $('body').on('click', '.weatherButton', function (e) {
+            var col, txt;
+            col = $('#schedule-table').data('col');
+            txt = $(this).parent().siblings("td[data-col=" + col + "]").text();
 
-    });
+            var visitor = txt;
+            console.log('opponent: ', visitor);
+            getWeather(visitor)
 
+            // })
+        } else {
+            getWeather('Chicago')
+        }
+    }
 
-    // var str = "data-123";
-    // str = str.replace("data-", "");
+    // weather done by city name using openweather API
+    // if today's date IS game date give current weather
+    // if today's date is <= 5 days but !current day give 3 day forcast
+    // if today's date is > 5 days from game day, give 16 day forcast
+    // if date is earlier than today's date then do not show weather button
+
+    function getWeather(values) {
+        let city = values;
+
+        // ajax call to server to get jobs
+        $.ajax({
+            url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&APPID=' + owAPI,
+            type: 'GET',
+            success: function (data) {
+                console.log(data);
+
+            },
+            error: function (response) {
+                console.log('error response', response);
+
+            }
+            // display on DOM 
+        })
+    } // end getJobs
+
 
     // Articles
     $.getJSON("./json/articles.json", function (data) {
@@ -112,60 +134,5 @@ $(document).ready(function () {
             // $('.articles').append('<h5>' + articles[i].article + '</h5>');
             $('.articles').append('<ul><li>' + ('<a href="' + articles[i].link + '"target="_blank">' + articles[i].article + '</a>') + '</li></ul>')
         }
-    }
-
-    function weatherButton(value) {
-
-        let opponent = $(this).val();
-        // console.log(opponent);
-
-        if (opponent.includes("at")) {
-            console.log('true');
-
-            getWeather(opponent)
-        }
-        else {
-            // makes home games use 'Chicago' for the weather city because Chicago is the home team
-            opponent = 'Chicago'
-            getWeather(opponent)
-        }
-    }
-
-    // weather done by city name using openweather API
-    // if today's date IS game date give current weather
-    // if today's date is <= 5 days but !current day give 3 day forcast
-    // if today's date is > 5 days from game day, give 16 day forcast
-    // if date is earlier than today's date then do not show weather button
-
-    function getWeather(values) {
-        let city = values;
-        console.log(city);
-
-        let dateObj = new Date();
-        let month = dateObj.getMonth() + 1; //months from 1-12
-        let day = dateObj.getDate();
-        let year = dateObj.getFullYear();
-        let fourDays = dateObj.getDate() + 5;
-
-        todaysDate = month + "/" + day + "/" + year;
-        fourDaysStr = month + "/" + fourDays + "/" + year;
-
-        var params = {
-            type: 'GET',
-            success: function (data) {
-                console.log('weather: ', data);
-            },
-        };
-        if (todaysDate === todaysDate) {
-            params.url = 'api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial';
-        }
-        if (todaysDate > todaysDate && (todaysDate <= fourDaysStr)) {
-            params.url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + ',US&units=imperial&cnt=5&APPID=' + owAPI;
-        }
-        else {
-            params.url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + ',US&units=imperial&cnt=16&APPID=' + owAPI;
-        }
-
-        $.ajax(params);
     }
 })
