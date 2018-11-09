@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     owAPI = '749da4002db4023d33f77723c728f9ec';
+    // qwIcons ='https://openweathermap.org/img/w/'
 
     $('#schedule').on('click', '.weatherButton', weatherButton);
 
@@ -57,8 +58,6 @@ $(document).ready(function () {
             loc = schedule[i].location;
             result = schedule[i].result;
 
-
-
             //appending rows to DOM
             let newRow = $('<tr class="schedule-row">');
             //appending rows to DOM
@@ -73,52 +72,69 @@ $(document).ready(function () {
     }
 
     //  Script allows for selectable column data when button clicked SEE: html table 'data-col='
-
     function weatherButton(value) {
+        $('.weather-wrapper').empty();
+
         let location = $(this).val();
-        console.log(location);
+        // console.log(location);
 
         if (location === 'Away') {
-            // $('body').on('click', '.weatherButton', function (e) {
             var col, txt;
             col = $('#schedule-table').data('col');
             txt = $(this).parent().siblings("td[data-col=" + col + "]").text();
 
             var visitor = txt;
-            console.log('opponent: ', visitor);
+            // console.log('opponent: ', visitor);
             getWeather(visitor)
-
-            // })
         } else {
             getWeather('Chicago')
         }
     }
 
-    // weather done by city name using openweather API
-    // if today's date IS game date give current weather
-    // if today's date is <= 5 days but !current day give 3 day forcast
-    // if today's date is > 5 days from game day, give 16 day forcast
-    // if date is earlier than today's date then do not show weather button
-
     function getWeather(values) {
         let city = values;
 
+        if (city == 'NY Giants') {
+            city = city.replace("NY Giants", "East Rutherford")
+        }
+        else if (city == 'Minnesota') {
+            city = city.replace("Minnesota", "Minneapolis")
+        }
+        else {
+            city == city
+        }
         // ajax call to server to get jobs
         $.ajax({
             url: 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=imperial&APPID=' + owAPI,
             type: 'GET',
             success: function (data) {
-                console.log(data);
+                // console.log(data.weather);
+                allData = data;
+                main = data.main;
+                weather = data.weather;
 
+                t = main.temp;
+                temp = t.toFixed(0);
+                name = allData.name;
+
+                $(".weather-wrapper").append('<h1 id="loc-name">' + name + "</h1>");
+                $(".weather-wrapper").append('<h2 id="loc-temp">' + temp + "º" + "</h2>");
+
+                for (let i = 0; i < 1; i++) {
+                    //appending rows to DOM
+                    desc = weather[i].description;
+                    icon = weather[i].icon;
+
+                    $(".weather-wrapper").append('<h3 class="loc-desc">' + desc + "</h3>");
+                    $(".weather-wrapper").append('<img class="weather-icon" src="http://openweathermap.org/img/w/' + icon + '.png"></img>');
+                }
             },
             error: function (response) {
                 console.log('error response', response);
-
             }
             // display on DOM 
         })
     } // end getJobs
-
 
     // Articles
     $.getJSON("./json/articles.json", function (data) {
@@ -126,12 +142,11 @@ $(document).ready(function () {
     });
 
     function displayAPIArticles(data) {
-
         let articles = data;
+
         $('#articles').empty();
         for (let i = 0; i < articles.length; i++) {
             //appending rows to DOM
-            // $('.articles').append('<h5>' + articles[i].article + '</h5>');
             $('.articles').append('<ul><li>' + ('<a href="' + articles[i].link + '"target="_blank">' + articles[i].article + '</a>') + '</li></ul>')
         }
     }

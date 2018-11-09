@@ -1,11 +1,11 @@
-title,
+/* title,
 h1,
 h2,
 h3,
 h4,
 h5 {
     font-family: 'Montserrat', sans-serif;
-}
+} */
 
 .main-layout {
     width: 1000px;
@@ -25,13 +25,13 @@ h5 {
 }
 
 .section-one {
-    display: none;
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 400px;
 }
 
 .secton-two {
-    display: none;
+    display: block;
 }
 
 .article-wrapper {
